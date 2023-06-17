@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
+app.use(express.static('styles.css'));
+
 app.get("/",(req, res)=>{
-    res.send("Server up and running");
+    res.sendFile(__dirname+"/sign_up.html");
 })
 
 app.listen(port, ()=>{
